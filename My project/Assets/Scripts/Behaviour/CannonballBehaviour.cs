@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,8 @@ public class CannonballBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        try{
+
         if(col.gameObject.name != this.gameObject.transform.root.name)
         {
             if(col.gameObject.name == "Player")
@@ -35,6 +38,8 @@ public class CannonballBehaviour : MonoBehaviour
             }
             anim.SetTrigger("Hit");
         }
+
+        }catch(NullReferenceException e){}
     }
 
     public void Destroy()

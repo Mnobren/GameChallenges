@@ -33,6 +33,8 @@ public class ChaserBehaviour : EnemyBehaviour
 
     public override void FixedUpdate()
     {
+        try{
+            
         gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
         if(move)
         {
@@ -64,6 +66,8 @@ public class ChaserBehaviour : EnemyBehaviour
             boom = false;
             player.GetComponent<PlayerBehaviour>().Damage(4);
         }
+
+        }catch(MissingReferenceException e){}
     }
 
     void Destroy()

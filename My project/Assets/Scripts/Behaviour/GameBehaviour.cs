@@ -27,6 +27,9 @@ public class GameBehaviour : MonoBehaviour
 
     private int score = 0;
 
+    private Coroutine routine1;
+    private Coroutine routine2;
+
     void Awake()
     {
         //Singleton Pattern (kind of)
@@ -56,6 +59,8 @@ public class GameBehaviour : MonoBehaviour
         Time.timeScale = 1f;
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
+            matchLength = 60;
+            spawnDelay = 10;
             input1 = GameObject.FindGameObjectWithTag("Input1");
             input2 = GameObject.FindGameObjectWithTag("Input2");
         }
@@ -66,9 +71,11 @@ public class GameBehaviour : MonoBehaviour
             hud = GameObject.FindGameObjectWithTag("HUD");
             overScreen = GameObject.FindGameObjectWithTag("Over");
             overScreen.SetActive(false);
+            spawnPoint = new List<Transform>();
             for(int i = 0; i < spawner.transform.childCount; i++) { spawnPoint.Add(spawner.transform.GetChild(i)); }
-            StartCoroutine(Spawner(spawnDelay));
-            StartCoroutine(MatchCountDown(matchLength));
+            score = 0;
+            routine1 = StartCoroutine(MatchCountDown(matchLength));
+            routine2 = StartCoroutine(Spawner(spawnDelay));
         }
     }
 
@@ -76,13 +83,14 @@ public class GameBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(length);
         GameOver();
+        yield break;
+        StopCoroutine(routine1);
     }
 
     IEnumerator Spawner(int delay)
     {
-        while(overScreen.activeSelf == false)
+        while(SceneManager.GetActiveScene().name == "MainGame")
         {
-            if(SceneManager.GetActiveScene().name != "MainGame") { yield break; }
             GameObject enemy;
             if(Random.Range(0, 4) < 3) { enemy = Shooter; }
             else { enemy = Chaser; }
@@ -90,6 +98,8 @@ public class GameBehaviour : MonoBehaviour
             Instantiate(enemy, spawnPoint[r].position, Quaternion.identity);
             yield return new WaitForSeconds(delay);
         }
+        yield break;
+        StopCoroutine(routine2);
     }
 
     public void GameOver()

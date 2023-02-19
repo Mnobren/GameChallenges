@@ -388,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1468183462932435560, guid: 4759e32bc9a8d7c4a9cba677b62b1a79, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1468183462932435560, guid: 4759e32bc9a8d7c4a9cba677b62b1a79, type: 3}
       propertyPath: m_LocalRotation.x
@@ -400,7 +400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1468183462932435560, guid: 4759e32bc9a8d7c4a9cba677b62b1a79, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1468183462932435560, guid: 4759e32bc9a8d7c4a9cba677b62b1a79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -412,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1468183462932435560, guid: 4759e32bc9a8d7c4a9cba677b62b1a79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 1468183462932435564, guid: 4759e32bc9a8d7c4a9cba677b62b1a79, type: 3}
       propertyPath: m_Name
@@ -8776,7 +8776,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -10627,14 +10627,14 @@ Tilemap:
     m_Data: {fileID: -6478712965800269383, guid: 813d99a2ca6b50540a06321a96bc1617, type: 3}
   - m_RefCount: 7
     m_Data: {fileID: -5431061518333706090, guid: 813d99a2ca6b50540a06321a96bc1617, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 6683727881973181945, guid: 813d99a2ca6b50540a06321a96bc1617, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -6493917890688818951, guid: 813d99a2ca6b50540a06321a96bc1617, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 3207943667436440665, guid: 813d99a2ca6b50540a06321a96bc1617, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 6683727881973181945, guid: 813d99a2ca6b50540a06321a96bc1617, type: 3}
   - m_RefCount: 115
     m_Data: {fileID: 311178627824484905, guid: 813d99a2ca6b50540a06321a96bc1617, type: 3}
   - m_RefCount: 130

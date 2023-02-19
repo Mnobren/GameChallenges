@@ -23,8 +23,12 @@ public class BarBehaviour : MonoBehaviour
 
     public void Refresh(int health)
     {
+        try{
+
         float aux = maxSize*(health/20f);
         transform.localScale = new Vector3(aux, transform.localScale.y, transform.localScale.z);
+
+        }catch(MissingReferenceException e){}
     }
 
     public void SetShip(GameObject ship)
